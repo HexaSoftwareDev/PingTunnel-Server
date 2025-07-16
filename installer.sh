@@ -78,7 +78,7 @@ After=network.target
 [Service]
 Type=simple
 WorkingDirectory=/opt/pingtunnel
-ExecStart=/opt/pingtunnel/pingtunnel -type server
+ExecStart=/opt/pingtunnel/pingtunnel -type server -key ${PINGTUNNEL_KEY}
 Restart=on-failure
 
 [Install]
@@ -92,14 +92,28 @@ EOF
     echo "✅ pingtunnel service is running."
 }
 
+show_final_info() {
+    SERVER_IP=$(curl -s https://api.ipify.org)
+    echo ""
+    echo "✅ Installation complete."
+    echo "---------------------------"
+    echo "Server IP : $SERVER_IP"
+    echo "Password  : $PINGTUNNEL_KEY"
+    echo "---------------------------"
+}
+
 main() {
     if [ "$(id -u)" -ne 0 ]; then
         echo "❌ Please run this script as root (use sudo)"
         exit 1
     fi
+    
+    # Prompt user for PingTunnel key
+    read -p "Enter a shared key for PingTunnel (-key): " PINGTUNNEL_KEY
 
     install_pingtunnel
     create_service
+    show_final_info
 }
 
 main
