@@ -4,7 +4,9 @@ This script installs [PingTunnel](https://github.com/esrrhs/pingtunnel) on your 
 
 ## 📱 Client App
 
-[Ping Tunnel – VPN over ICMP](https://apps.apple.com/app/ping-tunnel-vpn-over-icmp/id6748279683)
+iOS app : [Ping Tunnel – VPN over ICMP](https://apps.apple.com/app/ping-tunnel-vpn-over-icmp/id6748279683)
+
+Android app : [Ping Tunnel – VPN over ICMP](https://play.google.com/store/apps/details?id=dev.hexasoftware.PingTunnel)
 
 ---
 
