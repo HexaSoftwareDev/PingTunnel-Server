@@ -109,7 +109,14 @@ main() {
     fi
     
     # Prompt user for PingTunnel key
-    read -p "Enter a shared key for PingTunnel (-key): " PINGTUNNEL_KEY
+    while true; do
+        read -p "Enter a Password (Key) for PingTunnel (-key, numbers only): " PINGTUNNEL_KEY
+        if [[ "$PINGTUNNEL_KEY" =~ ^[0-9]+$ ]]; then
+            break
+        else
+            echo "❌ Please enter numbers only."
+        fi
+    done
 
     install_pingtunnel
     create_service
