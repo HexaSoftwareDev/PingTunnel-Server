@@ -27,6 +27,12 @@ Run this command to install PingTunnel server:
 ```bash
 curl -fsSL https://raw.githubusercontent.com/HexaSoftwareDev/PingTunnel-Server/main/installer.sh | sudo bash
 ```
+if install command not working use this instead:
+```bash
+curl -fsSL https://raw.githubusercontent.com/HexaSoftwareDev/PingTunnel-Server/main/installer.sh -o installer.sh
+
+sudo bash installer.sh
+```
 
 ## ▶️ Service Check
 ```bash
